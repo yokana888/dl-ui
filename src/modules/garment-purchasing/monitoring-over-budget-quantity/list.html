@@ -1,0 +1,43 @@
+<template>
+
+    <style>
+        table > tbody > tr > td {
+            white-space: pre;
+        }
+    </style>
+
+    <h1 class="page-header">Monitoring Over Budget Quantity</h1>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+           
+                <au-textbox value.bind="epoNo" label="Nomor PO External" placeholder="Nomor PO External">
+                </au-textbox>
+
+                <au-textbox value.bind="poNo" label="Nomor Ref PO" placeholder="Nomor Ref RO">
+                </au-textbox>
+
+                <au-textbox value.bind="inNo" label="Nomor Nota Intern" placeholder="Nomor Nota Intern">
+                </au-textbox>
+
+                <label for="contact" class="col-sm-9 control-label"></label>
+                <div class="col-sm-3">
+                    <button click.delegate="search()" class='btn btn-success'>Cari</button>
+                    <button click.delegate="reset()" class='btn btn-danger'>Reset</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a click.delegate="exportToXls()" class='btn btn-primary'>Cetak Excel</a>
+        </div>
+
+             <table ref="table" class="table table-bordered table-fixed table-hover table-condensed" border="1" id="myTable" ></table>
+            
+        <div class="alert alert-info text-center" role="alert" if.bind="data.length == 0">
+            Tidak ada data ditemukan.
+        </div>
+        <pagination if.bind="info.total>info.size" info.bind="info" change.delegate="changePage($event)" id="pager"></pagination>
+        <hr/>
+    </form>
+</template>
