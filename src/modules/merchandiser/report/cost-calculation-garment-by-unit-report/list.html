@@ -25,7 +25,8 @@
                     <th class="text-center">Konfeksi</th>
                     <th class="text-center">Seksi</th>
                     <th class="text-center">Article / Style</th>
-                    <th class="text-center">Komoditi</th>
+                    <th class="text-center">Kategori Produk</th>
+                    <th class="text-center">Produk</th>
                     <th class="text-center">Deskripsi</th>
                     <th class="text-center">Buyer Agent</th>
                     <th class="text-center">Nama Buyer Agent</th>
@@ -47,6 +48,7 @@
                         <td>${data.UnitName}</td>
                         <td>${data.Section}</td>
                         <td>${data.Article}</td>
+                        <td>${data.ProductCategory}</td>                                  
                         <td>${data.Comodity}</td>                                  
                         <td>${data.Description}</td>
                         <td>${data.BuyerCode}</td>
@@ -60,7 +62,7 @@
                     </tr>
                     <tr class="active">
                        <td class="text-center">.</td>
-                        <td class="text-right" colspan="10"><strong>${brand.brand}</strong></td>
+                        <td class="text-right" colspan="11"><strong>${brand.brand}</strong></td>
                         <td class="text-center" colspan="2"><strong>SUB TOTAL</strong></td>
                         <td class="text-right"><strong>${brand.subTotal1}</strong></td>                     
                         <td class="text-right"><strong>.</strong></td>                     
@@ -69,7 +71,7 @@
                     </tr>
                 </template>
                     <tr class="active">
-                        <td class="text-center" colspan="13"><strong>T O T A L . . . . . . :</strong></td>
+                        <td class="text-center" colspan="14"><strong>T O T A L . . . . . . :</strong></td>
                         <td class="text-right"><strong>${QtyTotal}</strong></td>                     
                         <td class="text-right"><strong>.</strong></td>                                                                     
                         <td class="text-right"><strong>.</strong></td>                                             

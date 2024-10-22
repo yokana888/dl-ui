@@ -70,6 +70,7 @@ export class List {
                             BrandName : data.BrandName,
                             Article : data.Article,
                             Comodity : data.Comodity,
+                            ProductCategory : data.ProductCategory,
                             ComodityDescription : data.ComodityDescription,
                             FabAllow : data.FabAllow,
                             AccAllow : data.AccAllow,
