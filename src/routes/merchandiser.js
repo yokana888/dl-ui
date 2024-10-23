@@ -337,7 +337,7 @@ module.exports = [
         name: 'ro-sample-validation',
         moduleId: './modules/merchandiser/ro-validation/index',
         nav: true,
-        title: 'Validasi RO Sample',
+        title: 'Validasi RO QC',
         auth: true,
         settings: {
             group: "merchandiser",
