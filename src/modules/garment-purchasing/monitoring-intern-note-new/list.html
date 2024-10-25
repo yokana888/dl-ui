@@ -116,6 +116,7 @@
                         <td colspan="2">SUPPLIER</td>
                         <td colspan="2">INVOICE</td>
                         <td colspan="2">SURAT JALAN</td>
+                        <td colspan="2">PO EXTERNAL</td>                        
                         <td rowspan="2">NO BON</td>
                         <td rowspan="2">NO BON KECIL</td>
                         <td rowspan="2">MATA UANG</td>
@@ -140,7 +141,9 @@
                         <td>NOMOR</td>
                         <td>TGL</td>
                         <td>NOMOR</td>
-                        <td>TGL</td>                        
+                        <td>TGL</td>  
+                        <td>NOMOR</td>
+                        <td>TGL</td>                                              
                         <td>NOMOR</td>
                         <td>TGL</td>
                         <td>NOMINAL</td>
@@ -159,6 +162,8 @@
                         <td>${IN.invoiceDate | dateFormat:'DD MMMM YYYY'}</td>
                         <td>${IN.doNo}</td>
                         <td>${IN.doDate | dateFormat:'DD MMMM YYYY'}</td>
+                        <td>${IN.epoNo}</td>
+                        <td>${IN.epoDate | dateFormat:'DD MMMM YYYY'}</td>
                         <td>${IN.billNo}</td>
                         <td>${IN.paymentBill}</td>
                         <td>${IN.currencyCode}</td>
