@@ -40,6 +40,11 @@ export class Service extends RestService {
         return super.getPdf(endpoint);
     }
 
+    getPdfWCopById(id) {
+        var endpoint = `${serviceUri}/pdf/Wcop/${id}`;
+        return super.getPdf(endpoint);
+    }
+
     getDefaultVat(info){
         var config = Container.instance.get(Config);
         var _endpoint = config.getEndpoint("core");
