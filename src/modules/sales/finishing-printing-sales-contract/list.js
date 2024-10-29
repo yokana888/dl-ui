@@ -7,7 +7,7 @@ import moment from 'moment';
 export class List {
 
 
-    context = ["detail", "print"]
+    context = ["detail", "print", "print W/ Kop"]
 
     columns = [
         { field: "SalesContractNo", title: "Nomor Sales Contract" },
@@ -55,6 +55,9 @@ export class List {
                 break;
             case "print":
                 this.service.getPdfById(data.Id);
+                break;
+            case "print W/ Kop":
+                this.service.getPdfWCopById(data.Id);
                 break;
         }
     }
