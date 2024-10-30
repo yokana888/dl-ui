@@ -150,7 +150,7 @@ export class DataForm {
             //     .filter((value, index, self) => self.indexOf(value) === index);
             // console.log(ROs);
             let itemPromises = this.data.items.map((item) => {
-                if (item.roNo.indexOf("M") != -1 || a.roNo.indexOf("S") != -1) {
+                if (item.roNo.indexOf("M") != -1 || item.roNo.indexOf("S") != -1) {
                    
                 } else {
                     return this.salesService.getCostCalculationByRO(item.roNo)
