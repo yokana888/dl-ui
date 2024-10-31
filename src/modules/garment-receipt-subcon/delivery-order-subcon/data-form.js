@@ -32,6 +32,7 @@ export class DataForm {
       { header: "No PO External" },
       { header: "Barang" },
       { header: "Nomor PO" },
+      { header: "Nomor RO" },
       { header: "Keterangan" },
       { header: "Qty Budget" },
       { header: "Qty SJ" },
@@ -126,9 +127,9 @@ export class DataForm {
     else return `${supplier.code} - ${supplier.name}`;
   };
 
-  get ccLoader() {
-    return CCLoader;
-  }
+  // get ccLoader() {
+  //   return CCLoader;
+  // }
 
   ccView = (cc) => {
     return `${cc.RO_Number}`;

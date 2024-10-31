@@ -56,6 +56,7 @@ export class DataForm {
       columns: [
         { header: "No PO" },
         { header: "Barang" },
+        { header: "RONo" },
         { header: "Lokasi" },
         { header: "Qty SJ" },
         { header: "Qty Terima" },
@@ -362,6 +363,8 @@ export class DataForm {
         _item.PricePerDealUnit = item.PricePerDealUnit;
         _item.DOQuantity = item.DOQuantity;
         _item.Unit = this.data.Unit;
+        _item.RONoMaster = item.RONoMaster;
+        _item.Article = item.Article;
         _items.push(_item);
       }
       this.data.Items = _items;
