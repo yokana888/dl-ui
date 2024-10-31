@@ -35,6 +35,12 @@
     </td>
 
     <td class="bg-primary">
+      <au-textbox value.bind="data.RONoMaster" error.bind="error.RONoMaster" read-only.bind="true"
+        options.bind="controlOptions">
+      </au-textbox>
+    </td>
+
+    <td class="bg-primary">
       <au-textbox value.bind="data.Product.Remark" error.bind="error.Product" read-only.bind="true"
         options.bind="controlOptions">
       </au-textbox>
