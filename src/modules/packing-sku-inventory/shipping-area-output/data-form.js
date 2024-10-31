@@ -46,7 +46,8 @@ export class DataForm {
   shifts = ["PAGI", "SIANG"];
   packingType = ["CARTON/BALE","LOOSE PACKING"];
   
-  authorizedItems = ["ADRIYANA DAMAYANTI", "WAHYU PAMUNGKAS"]
+  authorizedItems = ["ADRIYANA DAMAYANTI", "WAHYU PAMUNGKAS"];
+  uomUnit = ["MTR", "YARD"]
   detailOptions = {};
   types = ["OUT", "ADJ"];
   destinationAreas = ["PENJUALAN", "BUYER", "INSPECTION MATERIAL", "TRANSIT", "PACKING", "GUDANG JADI"];
