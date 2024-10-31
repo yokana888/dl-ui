@@ -65,7 +65,7 @@ export class ItemPOX {
         keyword: keyword,
         filter: JSON.stringify({
           SupplierId : this.SupplierId,
-          [`Items.Any(RONo == "${this.RONo}")`]: true ,
+          // [`Items.Any(RONo == "${this.RONo}")`]: true ,
         }),
       };
       return this.service.getEPO(info).then((result) => {
@@ -96,7 +96,7 @@ export class ItemPOX {
         keyword: keyword,
         filter: JSON.stringify({
           SupplierId : this.SupplierId,
-          [`Items.Any(RONo == "${this.RONo}")`]: true,
+          // [`Items.Any(RONo == "${this.RONo}")`]: true,
           EPONo : this.data.EPONo
         }),
       };
@@ -164,6 +164,8 @@ export class ItemPOX {
       this.data.Uom = newValue.Uom;
       this.data.CurrencyCode = "IDR";
       this.data.EPOItemId = newValue.EPOItemId;
+      this.data.RONoMaster = newValue.RONoMaster;
+      this.data.Article = newValue.Article;
     }
   }
 }
