@@ -115,6 +115,9 @@
       placeholder="Description">
     </au-multiline>
 
+    <au-dropdown if.bind="!isAdj" label="Satuan" value.bind="data.uomUnit" error.bind="error.Area" read-only.bind="readOnly"
+      items.bind="uomUnit" show.bind="!isSales" options.bind="controlOptions"></au-dropdown>
+
     <au-dropdown  if.bind="!isAdj" show.bind="!isSales" options.bind="controlOptions" label="Authorized" value.bind="data.packingListAuthorized" error.bind="error.packingListAuthorized"
       read-only.bind="readOnly || isEdit" items.bind="authorizedItems"></au-dropdown>
 
