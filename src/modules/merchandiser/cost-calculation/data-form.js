@@ -14,13 +14,13 @@ import moment from "moment";
 import numeral from "numeral";
 numeral.defaultFormat("0,0.00");
 const rateNumberFormat = "0,0.000";
-var PreSalesContractLoader = require("../../../loader/garment-pre-sales-contracts-loader");
-var BookingOrderLoader = require("../../../loader/garment-booking-order-by-no-for-ccg-loader");
-var GarmentMarketingLoader = require("../../../loader/garment-marketings-loader");
-var SizeRangeLoader = require("../../../loader/size-range-loader");
-var ComodityLoader = require("../../../loader/garment-comodities-loader");
-var UOMLoader = require("../../../loader/uom-loader");
-var UnitLoader = require("../../../loader/garment-units-loader");
+var PreSalesContractLoader = require('../../../loader/garment-pre-sales-contracts-loader');
+var BookingOrderLoader = require('../../../loader/garment-booking-order-by-no-for-ccg-loader');
+var GarmentMarketingLoader = require('../../../loader/garment-marketings-loader');
+var SizeRangeLoader = require('../../../loader/size-range-loader');
+var ComodityLoader = require('../../../loader/garment-comodities-loader');
+var UOMLoader = require('../../../loader/uom-loader');
+var UnitLoader = require('../../../loader/garment-units-gmt-loader');
 
 @inject(
   Router,
