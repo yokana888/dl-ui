@@ -129,7 +129,9 @@ export class DataForm {
             this.purchasingService
               .getUnitReceiptNote({
                 size: 1,
-                filter: JSON.stringify({ RONo: this.data.RONo }),
+                // filter: JSON.stringify({ RONo: this.data.RONo }),
+                filter: JSON.stringify({   [`Items.Any(RONoMaster == "${this.data.RONo}")`]: true }),
+              
               })
               .then((pr) => {
                 if (pr.data.length > 0) {
