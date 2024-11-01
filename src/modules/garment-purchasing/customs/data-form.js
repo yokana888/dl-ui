@@ -81,6 +81,8 @@ export class DataForm {
         this.data.arrivalDate = selectedBeacukai.Hari;
         this.data.netto = selectedBeacukai.Netto;
         this.data.bruto = selectedBeacukai.Bruto;
+        this.data.packagingQty = selectedBeacukai.JumlahKemasan;
+        this.data.packaging = selectedBeacukai.KodeKemasan;
         this.context.beacukaiAU.editorValue = "";
       } else {
         this.data.beacukaiDate = null;
