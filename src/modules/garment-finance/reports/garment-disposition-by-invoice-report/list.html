@@ -74,8 +74,8 @@
                         <td>${item.Amount}</td>
                         <td>${item.SupplierName}</td>
                         <td>${item.CurrencyCode}</td>
-                        <td>${item.SendToCashierDate}</td>
-                        <td>${item.ReceiptCashierDate}</td>
+                        <td>${item.SendToCashierDate | dateFormat:'DD MMM YYYY'}</td>
+                        <td>${item.ReceiptCashierDate | dateFormat:'DD MMM YYYY'}</td>                        
                     </tr>
                 </tbody>
             </table>
