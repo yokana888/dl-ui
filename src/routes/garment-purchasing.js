@@ -1260,4 +1260,33 @@ module.exports = [
       iconClass: "fa fa-dashboard",
     },
   },
+  //=====> Ledger
+  {
+    route: "/ledger/garment-general-ledger",
+    name: "ledger/garment-general-ledger",
+    moduleId: "./modules/garment-purchasing/ledger/upload-garment-general-ledger/index",
+    nav: true,
+    title: "Jurnal Umum Garment",
+    auth: true,
+    settings: {
+      group: "g-purchasing",
+      subGroup: "fitur",
+      permission: { H66: 1 },
+      iconClass: "fa fa-dashboard",
+    },
+  },
+  {
+    route: "/ledger/begining-ledger",
+    name: "ledger/begining-ledger",
+    moduleId: "./modules/garment-purchasing/ledger/upload-begining-general-ledger/index",
+    nav: true,
+    title: "Jurnal Saldo Awal",
+    auth: true,
+    settings: {
+      group: "g-purchasing",
+      subGroup: "fitur",
+      permission: { H67: 1 },
+      iconClass: "fa fa-dashboard",
+    },
+  },
 ];
