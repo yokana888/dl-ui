@@ -78,6 +78,8 @@ export class DataForm {
         { header: "Qty" },
         { header: "Satuan" },
         { header: "Price RO" },
+        { header: "Price FOB" },
+        { header: "Price CMT" },
         { header: "Mata Uang" },
         { header: "Amount" },
         { header: "Unit" },
