@@ -36,7 +36,7 @@ export class Service extends RestService {
     }
 
     delete(data) {
-        var endpoint = `${serviceUri}/${data._id}`;
+        var endpoint = `${serviceUri}/merge/${data._id}`;
         return super.delete(endpoint, data);
     }
 
