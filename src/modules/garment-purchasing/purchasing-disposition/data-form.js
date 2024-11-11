@@ -124,13 +124,15 @@ export class DataForm {
             this.data.SupplierId = _selectedSupplier.Id || _selectedSupplier._id;
             this.data.SupplierName = _selectedSupplier.name;
             this.data.SupplierCode = _selectedSupplier.code;
-            this.data.SupplierIsImport = _selectedSupplier.import
+            this.data.SupplierIsImport = _selectedSupplier.import;
+            this.data.Bank = _selectedSupplier.bankDetail
             // this.data.Supplier._id=_selectedSupplier.Id;
             // this.data.Supplier.code=_selectedSupplier.Code;
             // this.data.Supplier.name=_selectedSupplier.Name;
         }
         else {
             this.data.Supplier = {};
+             this.data.Bank = "";
             this.data.Items.splice(0);
         }
     }
