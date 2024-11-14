@@ -24,6 +24,7 @@ export class List {
 			return value ? moment(value).format("DD MMM YYYY") : "";
 		  }, title:  "Tanggal Disposisi"
 		},
+    { field: "BankCashNo", title: "No Kasbon"},
 		{ field: "DispositionDueDate",formatter: function (value, data, index) {
 			return value ? moment(value).format("DD MMM YYYY") : "";
 		  }, title:  "Tanggal Jatuh Tempo"

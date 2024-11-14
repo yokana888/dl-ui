@@ -29,6 +29,7 @@ export class List {
                 return value ? moment(value).format('DD MMM YYYY') : "-";
             }
         },
+        { field: 'BankCashNo', title: 'No. Kasbon' },
         {
             field: 'DispositionDueDate', title: 'Tgl Jatuh Tempo',
             formatter: function (value, data, index) {
