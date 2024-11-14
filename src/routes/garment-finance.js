@@ -675,7 +675,7 @@ module.exports = [
       group: "g-finance",
       subGroup: "ekspedisi disposisi",
       // permission: { "B13": 1, "C9": 1 , "B4": 1, "B11": 1, "B1": 1, "B12": 1},
-      permission: { "J47": 1 },
+      permission: { "J51": 1 },
       iconClass: 'fa fa-dashboard'
     }
   },
