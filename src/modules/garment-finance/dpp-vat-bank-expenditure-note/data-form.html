@@ -69,6 +69,13 @@
     >
     </au-autocomplete>
 
+    <au-textbox label="No. Kasbon"
+        value.bind="data.BankCashNo"
+        error.bind="error.BankCashNo"
+        read-only.bind="readOnly"
+        options.bind="controlOptions">
+    </au-textbox>
+
     <au-textbox
       value.bind="data.BGCheckNo"
       read-only.bind="readOnly"

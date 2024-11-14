@@ -22,6 +22,7 @@ export class List {
                 return value ? moment(value).format('DD MMM YYYY') : "-";
             },
         },
+        { field: 'BankCashNo', title: 'No Kasbon' },
         { field: 'CategoryName', title: 'Category' },
         { field: 'DivisionName', title: 'Divisi' },
         { field: 'PaymentMethod', title: 'Cara Pembayaran' },
@@ -430,6 +431,7 @@ export class List {
                         wsData.push({
                             'No Bukti Pengeluaran Bank': data.DocumentNo,
                             'Tanggal Bayar DPP + PPN': data.Date ? moment(data.Date).format('DD MMM YYYY') : '-',
+                            'No Kasbon': data.BankCashNo,                            
                             'Category': data.CategoryName,
                             'Divisi': data.DivisionName,
                             'Cara Pembayaran': data.PaymentMethod,
