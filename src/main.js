@@ -42,7 +42,7 @@ export async function configure(aurelia) {
             var purchasingAzure = "https://com-danliris-service-purchasing.azurewebsites.net/v1/";
             var garmentPurchasing = "https://dl-purchasing-garment-webapi.azurewebsites.net/v1/";
             var inventory = "https://dl-inventory-webapi.azurewebsites.net/v1/";
-            var inventoryAzure = "https://com-danliris-service-inventory-prd.azurewebsites.net/v1/";
+            var inventoryAzure = "https://com-danliris-service-inventory-prd-v8.azurewebsites.net/v1/";
             var garmentMasterPlan = "https://dl-garment-master-plan-webapi.azurewebsites.net/v1/";
             var spMasterPlan = "https://dl-sp-master-plan-webapi.mybluemix.net/v1/";
             var spinning = "https://com-danliris-service-spinning.azurewebsites.net/";
@@ -52,7 +52,7 @@ export async function configure(aurelia) {
             const dealTracking = 'https://com-danliris-service-deal-tracking.azurewebsites.net/v1/';
             const sales = "https://com-danliris-service-sales.azurewebsites.net/v1/";
             var weaving = "https://com-danliris-service-weaving.azurewebsites.net/";
-            var finance = "https://com-danliris-service-finance-accounting.azurewebsites.net/v1/";
+            var finance = "https://com-danliris-service-finance-accounting-v8.azurewebsites.net/v1/";
             var garmentProduction = "https://com-danliris-service-garment.azurewebsites.net/";
             var packingInventory = "https://com-danliris-service-packing-inventory.azurewebsites.net/v1/";
             var dyeing = "https://dyeing-printing-etl-service.azurewebsites.net/api/";
