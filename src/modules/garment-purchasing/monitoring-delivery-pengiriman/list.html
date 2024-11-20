@@ -1,0 +1,78 @@
+<template>
+
+     <style>
+        table > tbody > tr > td {
+            white-space: pre;
+        }
+    </style>
+
+    <h1 class="page-header">Monitoring Delivery Pengiriman Barang</h1>
+    <form class="form-horizontal">
+       
+        <au-textbox value.bind="epoNo" 
+            label="No Po External" 
+            placeholder="No Po External" 
+            error.bind="error.epoNo">
+        </au-textbox>
+
+        <au-dropdown 
+                label="Jenis Supplier" 
+                value.bind="jnsSpl"
+                items.bind="SupplierType"
+                options.bind="controlOptions" >
+        </au-dropdown>
+        
+        <au-autocomplete 
+                value.bind="supplierCode" 
+                label="Supplier" 
+                loader.bind="supplierLoader"
+                placeholder="Cari Supplier" 
+                read-only.bind="readOnly" 
+                key="code" 
+                text="name"
+                options.bind="controlOptions">
+        </au-autocomplete>
+
+        <au-autocomplete 
+                value.bind="staffName" 
+                label="Staff Pembelian" 
+                loader.bind="accountLoader"
+                placeholder="Cari Staff Pembelian" 
+                read-only.bind="readOnly" 
+                key="userName" 
+                text="userName"
+                options.bind="controlOptions">
+        </au-autocomplete>
+        
+       <au-datepicker 
+            label="Tanggal Delivery Awal " 
+            value.bind="dateFrom" error.bind="error.dateFrom">
+        </au-datepicker>
+
+        <au-datepicker 
+            label="Tanggal Delivery Akhir" 
+            value.bind="dateTo" error.bind="error.dateTo">
+        </au-datepicker>
+
+        <div class="form-group">
+            <label for="contact" class="col-sm-6 control-label"></label>
+            <div class="col-sm-3">
+                <button click.delegate="search()" class='btn btn-primary'>Cari Data</button>
+                <button click.delegate="reset()" class='btn btn-danger'>Reset Data</button>
+            </div>
+        </div>
+        <div slot="toolbar" class="btn-group">
+            <button class='btn btn-success' click.delegate="ExportToExcel()">Export To Excel</button>
+          </div>
+        <br>
+               
+         <table ref="table" class="table table-bordered table-fixed table-hover table-condensed" border="1" id="myTable" ></table>
+            
+        <div class="alert alert-info text-center" role="alert" if.bind="data.length == 0">
+                    Tidak ada data ditemukan.
+        </div>
+
+        <hr/>
+    </form>
+
+</template>
