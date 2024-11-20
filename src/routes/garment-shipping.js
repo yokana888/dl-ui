@@ -1,5 +1,35 @@
 module.exports = [
     {
+        route: "garment-shipping/local/sales-contract",
+        name: "garment-shipping/local/sales-contract",
+        moduleId: "modules/garment-shipping/local/sales-contract/index",
+        nav: true,
+        title: "Sales Contract (Lokal)",
+        auth: true,
+        settings: {
+            group: "g-shipping",
+            subGroup: "lokal",
+            // permission: { "C9": 1, "SG": 1 },
+            permission: { "P1": 1 },
+            iconClass: "fa fa-dashboard"
+        }
+    },
+    {
+        route: "garment-shipping/local/sales-do",
+        name: "garment-shipping/local/sales-do",
+        moduleId: "modules/garment-shipping/local/sales-do/index",
+        nav: true,
+        title: "DO Penjualan (Lokal)",
+        auth: true,
+        settings: {
+            group: "g-shipping",
+            subGroup: "lokal",
+            // permission: { "C9": 1, "SG": 1 },
+            permission: { "P1": 1 },
+            iconClass: "fa fa-dashboard"
+        }
+    },
+    {
         route: "master/garment-shipping-staff",
         name: "garment-shipping-staff",
         moduleId: "modules/master/garment-shipping-staff/index",
