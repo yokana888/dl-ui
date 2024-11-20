@@ -11,8 +11,6 @@ var AccountLoader = require('../../../loader/garment-internal-purchase-orders-na
 @inject(Router, Service)
 export class List {
 
-    info = { page: 1,size:25};
-
     constructor(router, service) {
         this.service = service;
         this.router = router;
@@ -24,15 +22,11 @@ export class List {
     }
 
     search(){
-            this.info.page = 1;
-            this.info.total=0;
             this.searching();
     }
       
     searching() {
         let args = {
-            page: this.info.page,
-            size: this.info.size,
             epoNo : this.epoNo ? this.epoNo : "",
             poNo : this.poNo ? this.poNo : "",
             inNo : this.inNo ? this.inNo : "",
@@ -41,16 +35,13 @@ export class List {
         this.service.search(args)
             .then(result => {
                 console.log(result.data);
-                var resultTotal=0;
                 this.data = result.data;
                 var index=1;
                 for(var item of this.data)
                 {
-                    this.resultTotal= item.Total;
                     item.index=index;
                     index++;
                 }
-                this.info.total= this.resultTotal;
                 
                 this.fillTable();
             })
@@ -116,8 +107,6 @@ export class List {
         bootstrapTableOptions.width=$(window).width() - $('.sidebar').width()- 200;
         bootstrapTableOptions.height = $(window).height() - $('.navbar').height() - $('.navbar').height() - 25;
         $(this.table).bootstrapTable('destroy').bootstrapTable(bootstrapTableOptions);
-
-
     }
 
     reset() {
@@ -125,13 +114,10 @@ export class List {
     this.poNo = "",
     this.inNo = "",
     this.data = [];
-    this.info.page = 1;
     }
 
     exportToXls() {
         let args = {            
-            page: this.info.page,
-            size: this.info.size,
             epoNo : this.epoNo ? this.epoNo : "",
             poNo : this.poNo ? this.poNo : "",
             inNo : this.inNo ? this.inNo : "",
@@ -148,12 +134,6 @@ export class List {
         if (_startDate > _endDate || !this.dateTo) {
             this.dateTo = e.srcElement.value;
         }
-    }
-
-    changePage(e) {
-        var page = e.detail;
-        this.info.page = page;
-        this.searching();
     }
 
 }
