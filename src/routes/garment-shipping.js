@@ -10,7 +10,7 @@ module.exports = [
             group: "g-shipping",
             subGroup: "lokal",
             // permission: { "C9": 1, "SG": 1 },
-            permission: { "P1": 1 },
+            permission: { "P89": 1 },
             iconClass: "fa fa-dashboard"
         }
     },
@@ -25,7 +25,7 @@ module.exports = [
             group: "g-shipping",
             subGroup: "lokal",
             // permission: { "C9": 1, "SG": 1 },
-            permission: { "P1": 1 },
+            permission: { "P90": 1 },
             iconClass: "fa fa-dashboard"
         }
     },
