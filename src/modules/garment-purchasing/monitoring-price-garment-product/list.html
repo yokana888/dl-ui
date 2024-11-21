@@ -1,0 +1,129 @@
+<template>
+    <h1 class="page-header">Monitoring Harga Produk Garment</h1>
+    <form class="form-horizontal">
+       
+        <au-dropdown 
+                label="Kategori" 
+                value.bind="KtgrItem"
+                items.bind="KategoriItem"
+                options.bind="controlOptions" >
+        </au-dropdown>             
+
+        <au-textbox value.bind="productCode" 
+            label="Kode Product" 
+            placeholder="Kode Produk" 
+            error.bind="error.productCode">
+        </au-textbox>
+
+        <au-autocomplete 
+            value.bind="productName" 
+            error.bind="error.productName" 
+            label="Nama Produk" 
+            loader.bind="productLoader"             
+            placeholder="Cari Nama Produk" 
+            key="Name"
+            text="Name"
+            options.bind="controlOptions">
+        </au-autocomplete>
+
+
+        <au-autocomplete 
+                value.bind="supplierCode" 
+                label="Supplier" 
+                loader.bind="supplierLoader"
+                placeholder="Cari Supplier" 
+                read-only.bind="readOnly" 
+                key="code" 
+                text="name"
+                options.bind="controlOptions">
+            </au-autocomplete>
+        
+       <au-datepicker 
+            label="Tanggal PO Ekternal Awal" 
+            value.bind="dateFrom" error.bind="error.dateFrom">
+        </au-datepicker>
+
+        <au-datepicker 
+            label="Tanggal PO Ekternal Akhir " 
+            value.bind="dateTo" error.bind="error.dateTo">
+        </au-datepicker>
+
+        <div class="form-group">
+            <label for="contact" class="col-sm-6 control-label"></label>
+            <div class="col-sm-3">
+                <button click.delegate="search()" class='btn btn-primary'>Cari Data</button>
+                <button click.delegate="reset()" class='btn btn-danger'>Reset Data</button>
+            </div>
+        </div>
+        <div slot="toolbar" class="btn-group">
+            <button class='btn btn-success' click.delegate="ExportToExcel()">Export To Excel</button>
+          </div>
+        <br>
+         <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+            <thead align="center">
+                  <tr>
+                        <td rowspan="2">NO</td>
+                        <td colspan="2">PO EXTERNAL</td>
+                        <td rowspan="2">NOMOR PR</td>
+                        <td rowspan="2">NO REF PO</td>                        
+                        <td colspan="2">SUPPLIER</td>
+                        <td colspan="2">INVOICE</td>
+                        <td colspan="2">NOTA INTERN</td>     
+                        <td colspan="3">PRODUK</td>
+                        <td rowspan="2">JML PO</td>
+                        <td rowspan="2">SATUAN</td>
+                        <td rowspan="2">MATA UANG</td>
+                        <td rowspan="2">HARGA SATUAN</td>
+                        <td rowspan="2">RATE</td>
+                        <td rowspan="2">JUMLAH HARGA</td>                                                               
+                    </tr>
+                    <tr>                
+                        <td>NOMOR</td>
+                        <td>TANGGAL</td>
+                        <td>KODE</td>
+                        <td>NAMA</td>
+                        <td>NOMOR</td>
+                        <td>TANGGAL</td>
+                        <td>NOMOR</td>  
+                        <td>TANGGAL</td>
+                        <td>KODE</td>
+                        <td>NANA</td>
+                        <td>KETERANGAN</td>   
+                    </tr>
+            </thead>
+            <tbody>
+                <tr repeat.for="item of data">
+
+                    <td class="text-left">${$index + 1}</td>
+                    <td class="text-left">${item.epoNo}</td>
+                    <td class="text-left">${item.orderDate}</td>
+                    <td class="text-left">${item.prNo}</td>
+                    <td class="text-left">${item.poNo}</td>    
+                    <td class="text-left">${item.supplierCode}</td>
+                    <td class="text-left">${item.supplierName}</td>
+                    <td class="text-left">${item.invoiceNo}</td>
+                    <td class="text-left">${item.invoiceDate}</td>
+                    <td class="text-left">${item.inNo}</td>
+                    <td class="text-left">${item.inDate}</td>
+                    <td class="text-left">${item.productCode}</td>
+                    <td class="text-left">${item.productName}</td>
+                    <td class="text-left">${item.productRemark}</td>
+                    <td class="text-right">${item.epoQuantity}</td>
+                    <td class="text-left">${item.uomunit}</td>
+                    <td class="text-left">${item.currencyCode}</td>
+                    <td class="text-right">${item.epoprice}</td>
+                    <td class="text-right">${item.rate}</td>
+                    <td class="text-right">${item.amount}</td>                    
+                </tr>
+            </tbody>
+        </table>
+       </div>
+        
+        <div class="alert alert-info text-center" role="alert" if.bind="data.length === 0">
+            ~ * ~ * ~ * ~ * ~ * ~ Tidak Ada Data Yang Ditemukan ~ * ~ * ~ * ~ * ~ * ~
+        </div>
+        <hr/>
+    </form>
+
+</template>
