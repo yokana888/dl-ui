@@ -48,7 +48,7 @@ export class PurchaseOrderItem {
         //   if (this.data.Items) {
         //     this.isShowing = true;
         //   }
-
+        console.log(this.data);
         this.selectedPurchaseOrderExternal = this.data.PurchaseOrderExternal;
 
         // }
@@ -100,7 +100,8 @@ export class PurchaseOrderItem {
                                 priceBeforeTax: proddetail.priceBeforeTax,
                                 productRemark: proddetail.productRemark,
                                 dealUom: proddetail.dealUom,
-                                includePpn: proddetail.includePpn
+                                includePpn: proddetail.includePpn,
+                                isPayVat: proddetail.isPayVat,
                             };
                             this._items.push(itemData);
                         }
@@ -119,7 +120,8 @@ export class PurchaseOrderItem {
                                 priceBeforeTax: proddetail.priceBeforeTax,
                                 productRemark: proddetail.productRemark,
                                 dealUom: proddetail.dealUom,
-                                includePpn: proddetail.includePpn
+                                includePpn: proddetail.includePpn,
+                                isPayVat: proddetail.isPayVat,
                             };
                             this._items.push(itemData);
                         }
