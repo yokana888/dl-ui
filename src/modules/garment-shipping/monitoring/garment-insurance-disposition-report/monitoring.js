@@ -77,10 +77,10 @@ export class List {
                             amount : data.amount.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
                             premiAmount : data.premiAmount.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),      
                             amountC1A : data.amountC1A.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-                            amountC1B : data.amountC1B.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-                            amountC2A : data.amountC2A.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-                            amountC2B : data.amountC2B.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-                            amountC2C : data.amountC2C.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+                            // amountC1B : data.amountC1B.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+                            // amountC2A : data.amountC2A.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+                            // amountC2B : data.amountC2B.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+                            // amountC2C : data.amountC2C.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
 
                         });
                         
@@ -99,25 +99,25 @@ export class List {
                             } 
                             subTotalBuyer2[Buyer] += data.amountC1A;  
                             
-                        if (!subTotalBuyer3[Buyer]) {
-                                subTotalBuyer3[Buyer] = 0;
-                            } 
-                            subTotalBuyer3[Buyer] += data.amountC1B;     
+                        // if (!subTotalBuyer3[Buyer]) {
+                        //         subTotalBuyer3[Buyer] = 0;
+                        //     } 
+                        //     subTotalBuyer3[Buyer] += data.amountC1B;     
 
-                        if (!subTotalBuyer4[Buyer]) {
-                                subTotalBuyer4[Buyer] = 0;
-                            } 
-                            subTotalBuyer4[Buyer] += data.amountC2A;     
+                        // if (!subTotalBuyer4[Buyer]) {
+                        //         subTotalBuyer4[Buyer] = 0;
+                        //     } 
+                        //     subTotalBuyer4[Buyer] += data.amountC2A;     
 
-                        if (!subTotalBuyer5[Buyer]) {
-                                subTotalBuyer5[Buyer] = 0;
-                            } 
-                            subTotalBuyer5[Buyer] += data.amountC2B;     
+                        // if (!subTotalBuyer5[Buyer]) {
+                        //         subTotalBuyer5[Buyer] = 0;
+                        //     } 
+                        //     subTotalBuyer5[Buyer] += data.amountC2B;     
 
-                        if (!subTotalBuyer6[Buyer]) {
-                                subTotalBuyer6[Buyer] = 0;
-                            } 
-                            subTotalBuyer6[Buyer] += data.amountC2C;   
+                        // if (!subTotalBuyer6[Buyer]) {
+                        //         subTotalBuyer6[Buyer] = 0;
+                        //     } 
+                        //     subTotalBuyer6[Buyer] += data.amountC2C;   
 
                 }
      
@@ -125,10 +125,10 @@ export class List {
                this.TotAmt = 0;
                this.TotPrm = 0;
                this.Tot1A = 0;
-               this.Tot1B = 0;
-               this.Tot2A = 0;
-               this.Tot2B = 0;
-               this.Tot2C = 0;
+            //    this.Tot1B = 0;
+            //    this.Tot2A = 0;
+            //    this.Tot2B = 0;
+            //    this.Tot2C = 0;
                                
                for (var data in dataByBuyer) {
                    buyers.push({
@@ -137,26 +137,26 @@ export class List {
                    subTotal: (subTotalBuyer[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
                    subTotal1: (subTotalBuyer1[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
                    subTotal2: (subTotalBuyer2[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),                   
-                   subTotal3: (subTotalBuyer3[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),      
-                   subTotal4: (subTotalBuyer4[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),      
-                   subTotal5: (subTotalBuyer5[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),      
-                   subTotal6: (subTotalBuyer6[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),                                                         
+                //    subTotal3: (subTotalBuyer3[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),      
+                //    subTotal4: (subTotalBuyer4[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),      
+                //    subTotal5: (subTotalBuyer5[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),      
+                //    subTotal6: (subTotalBuyer6[data]).toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),                                                         
                  });
                    this.TotAmt += subTotalBuyer[data];
                    this.TotPrm += subTotalBuyer1[data];  
                    this.Tot1A += subTotalBuyer2[data];  
-                   this.Tot1B += subTotalBuyer3[data]; 
-                   this.Tot2A += subTotalBuyer4[data];  
-                   this.Tot2B += subTotalBuyer5[data]; 
-                   this.Tot2C += subTotalBuyer6[data];                     
+                //    this.Tot1B += subTotalBuyer3[data]; 
+                //    this.Tot2A += subTotalBuyer4[data];  
+                //    this.Tot2B += subTotalBuyer5[data]; 
+                //    this.Tot2C += subTotalBuyer6[data];                     
                }
                this.TotAmt = this.TotAmt.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                this.TotPrm = this.TotPrm.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                this.Tot1A = this.Tot1A.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-               this.Tot1B = this.Tot1B.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });   
-               this.Tot2A = this.Tot2A.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-               this.Tot2B = this.Tot2B.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-               this.Tot2C = this.Tot2C.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });   
+            //    this.Tot1B = this.Tot1B.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });   
+            //    this.Tot2A = this.Tot2A.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            //    this.Tot2B = this.Tot2B.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            //    this.Tot2C = this.Tot2C.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });   
                           
                this.buyers = buyers;
              });   
@@ -186,10 +186,10 @@ export class List {
         this.TotAmt = null;
         this.TotPrm = null;
         this.Tot1A = null;
-        this.Tot1B = null;
-        this.Tot2A = null;
-        this.Tot2B = null;
-        this.Tot2C = null;        
+        // this.Tot1B = null;
+        // this.Tot2A = null;
+        // this.Tot2B = null;
+        // this.Tot2C = null;        
     }
 
     dateFromChanged(e) {
