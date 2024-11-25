@@ -36,28 +36,30 @@ export class items {
         }
         if (this.data.id) {
             var invoice = await this.service.getInvoiceById(this.data.invoiceId);
+            this.data.amount1APercentage = 0;
             for (var item of invoice.garmentShippingInvoiceUnits) {
-                if (item.unit.code.includes("2A"))
-                    this.data.amount2APercentage = item.amountPercentage;
-                if (item.unit.code.includes("2B"))
-                    this.data.amount2BPercentage = item.amountPercentage;
-                if (item.unit.code.includes("2C"))
-                    this.data.amount2CPercentage = item.amountPercentage;
-                if (item.unit.code.includes("1A"))
-                    this.data.amount1APercentage = item.amountPercentage;
-                if (item.unit.code.includes("1B"))
-                    this.data.amount1BPercentage = item.amountPercentage;
+                //if (item.unit.code.includes("GMT"))
+                if (item.unit.code =="GMT")
+                    this.data.amount1APercentage += item.amountPercentage;
+                // if (item.unit.code.includes("2B"))
+                //     this.data.amount2BPercentage = item.amountPercentage;
+                // if (item.unit.code.includes("2C"))
+                //     this.data.amount2CPercentage = item.amountPercentage;
+                // if (item.unit.code.includes("1A"))
+                //     this.data.amount1APercentage = item.amountPercentage;
+                // if (item.unit.code.includes("1B"))
+                //     this.data.amount1BPercentage = item.amountPercentage;
             }
 
         }
     }
 
     async selectedInvoiceChanged(newValue) {
-        this.data.amount2APercentage = 0;
-        this.data.amount2BPercentage = 0;
-        this.data.amount2CPercentage = 0;
+        // this.data.amount2APercentage = 0;
+        // this.data.amount2BPercentage = 0;
+        // this.data.amount2CPercentage = 0;
         this.data.amount1APercentage = 0;
-        this.data.amount1BPercentage = 0;
+        // this.data.amount1BPercentage = 0;
         this.data.amount = 0;
         if (newValue) {
             this.data.buyerAgent = newValue.buyerAgent;
@@ -69,27 +71,28 @@ export class items {
             }
             var invoice = await this.service.getInvoiceById(this.data.invoiceId);
             for (var item of invoice.garmentShippingInvoiceUnits) {
-                if (item.unit.code.includes("2A"))
-                    this.data.amount2APercentage = item.amountPercentage;
-                if (item.unit.code.includes("2B"))
-                    this.data.amount2BPercentage = item.amountPercentage;
-                if (item.unit.code.includes("2C"))
-                    this.data.amount2CPercentage = item.amountPercentage;
-                if (item.unit.code.includes("1A"))
-                    this.data.amount1APercentage = item.amountPercentage;
-                if (item.unit.code.includes("1B"))
-                    this.data.amount1BPercentage = item.amountPercentage;
+                //if (item.unit.code.includes("GMT"))
+                if (item.unit.code =="GMT")
+                    this.data.amount1APercentage += item.amountPercentage;
+                // if (item.unit.code.includes("2B"))
+                //     this.data.amount2BPercentage = item.amountPercentage;
+                // if (item.unit.code.includes("2C"))
+                //     this.data.amount2CPercentage = item.amountPercentage;
+                // if (item.unit.code.includes("1A"))
+                //     this.data.amount1APercentage = item.amountPercentage;
+                // if (item.unit.code.includes("1B"))
+                //     this.data.amount1BPercentage = item.amountPercentage;
             }
         }
         else {
             this.data.buyerAgent = null;
             this.data.invoiceNo = "";
             this.data.invoiceId = 0;
-            this.data.amount2APercentage = 0;
-            this.data.amount2BPercentage = 0;
-            this.data.amount2CPercentage = 0;
+            // this.data.amount2APercentage = 0;
+            // this.data.amount2BPercentage = 0;
+            // this.data.amount2CPercentage = 0;
             this.data.amount1APercentage = 0;
-            this.data.amount1BPercentage = 0;
+            // this.data.amount1BPercentage = 0;
             this.data.amount = 0;
         }
     }
@@ -111,51 +114,51 @@ export class items {
         return this.data.premi;
     }
 
-    get amount2A() {
-        this.data.amount2A = 0;
-        if (this.type == "Kargo") {
-            if (this.data.amount && this.data.currencyRate && this.data.amount2APercentage) {
-                this.data.amount2A = this.data.amount * this.data.currencyRate * this.data.amount2APercentage / 100;
-            }
-        }
-        else {
-            if (this.data.premi && this.data.amount2APercentage) {
-                this.data.amount2A = this.data.premi * this.data.amount2APercentage / 100;
-            }
-        }
-        return this.data.amount2A;
-    }
+    // get amount2A() {
+    //     this.data.amount2A = 0;
+    //     if (this.type == "Kargo") {
+    //         if (this.data.amount && this.data.currencyRate && this.data.amount2APercentage) {
+    //             this.data.amount2A = this.data.amount * this.data.currencyRate * this.data.amount2APercentage / 100;
+    //         }
+    //     }
+    //     else {
+    //         if (this.data.premi && this.data.amount2APercentage) {
+    //             this.data.amount2A = this.data.premi * this.data.amount2APercentage / 100;
+    //         }
+    //     }
+    //     return this.data.amount2A;
+    // }
 
-    get amount2B() {
-        this.data.amount2B = 0;
-        if (this.type == "Kargo") {
-            if (this.data.amount && this.data.currencyRate && this.data.amount2BPercentage) {
-                this.data.amount2B = this.data.amount * this.data.currencyRate * this.data.amount2BPercentage / 100;
-            }
-        }
-        else {
-            if (this.data.amount2BPercentage && this.data.premi) {
-                this.data.amount2B = this.data.premi * this.data.amount2BPercentage / 100;
-            }
-        }
+    // get amount2B() {
+    //     this.data.amount2B = 0;
+    //     if (this.type == "Kargo") {
+    //         if (this.data.amount && this.data.currencyRate && this.data.amount2BPercentage) {
+    //             this.data.amount2B = this.data.amount * this.data.currencyRate * this.data.amount2BPercentage / 100;
+    //         }
+    //     }
+    //     else {
+    //         if (this.data.amount2BPercentage && this.data.premi) {
+    //             this.data.amount2B = this.data.premi * this.data.amount2BPercentage / 100;
+    //         }
+    //     }
 
-        return this.data.amount2B;
-    }
+    //     return this.data.amount2B;
+    // }
 
-    get amount2C() {
-        this.data.amount2C = 0;
-        if (this.type == "Kargo") {
-            if (this.data.amount && this.data.currencyRate && this.data.amount2CPercentage) {
-                this.data.amount2C = this.data.amount * this.data.currencyRate * this.data.amount2CPercentage / 100;
-            }
-        }
-        else {
-            if (this.data.amount2CPercentage && this.data.premi) {
-                this.data.amount2C = this.data.premi * this.data.amount2CPercentage / 100;
-            }
-        }
-        return this.data.amount2C;
-    }
+    // get amount2C() {
+    //     this.data.amount2C = 0;
+    //     if (this.type == "Kargo") {
+    //         if (this.data.amount && this.data.currencyRate && this.data.amount2CPercentage) {
+    //             this.data.amount2C = this.data.amount * this.data.currencyRate * this.data.amount2CPercentage / 100;
+    //         }
+    //     }
+    //     else {
+    //         if (this.data.amount2CPercentage && this.data.premi) {
+    //             this.data.amount2C = this.data.premi * this.data.amount2CPercentage / 100;
+    //         }
+    //     }
+    //     return this.data.amount2C;
+    // }
 
     get amount1A() {
         this.data.amount1A = 0;
@@ -172,18 +175,18 @@ export class items {
         return this.data.amount1A;
     }
 
-    get amount1B() {
-        this.data.amount1B = 0;
-        if (this.type == "Kargo") {
-            if (this.data.amount && this.data.currencyRate && this.data.amount1BPercentage) {
-                this.data.amount1B = this.data.amount * this.data.currencyRate * this.data.amount1BPercentage / 100;
-            }
-        }
-        else {
-            if (this.data.amount1BPercentage && this.data.premi) {
-                this.data.amount1B = this.data.premi * this.data.amount1BPercentage / 100;
-            }
-        }
-        return this.data.amount1B;
-    }
+    // get amount1B() {
+    //     this.data.amount1B = 0;
+    //     if (this.type == "Kargo") {
+    //         if (this.data.amount && this.data.currencyRate && this.data.amount1BPercentage) {
+    //             this.data.amount1B = this.data.amount * this.data.currencyRate * this.data.amount1BPercentage / 100;
+    //         }
+    //     }
+    //     else {
+    //         if (this.data.amount1BPercentage && this.data.premi) {
+    //             this.data.amount1B = this.data.premi * this.data.amount1BPercentage / 100;
+    //         }
+    //     }
+    //     return this.data.amount1B;
+    // }
 }

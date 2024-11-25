@@ -45,11 +45,11 @@ export class DataForm {
         { header: "Amount" },
         { header: "Kurs" },
         { header: "Amount IDR" },
-        { header: "Amount Per Unit (C2A)" },
-        { header: "Amount Per Unit (C2B)" },
-        { header: "Amount Per Unit (C2C)" },
-        { header: "Amount Per Unit (C1A)" },
-        { header: "Amount Per Unit (C1B)" },
+        { header: "Amount Per Unit GMT" },
+        // { header: "Amount Per Unit (C2B)" },
+        // { header: "Amount Per Unit (C2C)" },
+        // { header: "Amount Per Unit (C1A)" },
+        // { header: "Amount Per Unit (C1B)" },
     ];
 
     itemsColumnsCredit = [
@@ -59,11 +59,11 @@ export class DataForm {
         { header: "Buyer" },
         { header: "Amount USD" },
         { header: "Premi" },
-        { header: "Premi Per Unit (C2A)" },
-        { header: "Premi Per Unit (C2B)" },
-        { header: "Premi Per Unit (C2C)" },
-        { header: "Premi Per Unit (C1A)" },
-        { header: "Premi Per Unit (C1B)" },
+        { header: "Premi Per Unit GMT" },
+        // { header: "Premi Per Unit (C2B)" },
+        // { header: "Premi Per Unit (C2C)" },
+        // { header: "Premi Per Unit (C1A)" },
+        // { header: "Premi Per Unit (C1B)" },
     ];
 
 
@@ -106,35 +106,35 @@ export class DataForm {
             this.data.unitCharge = [];
 
             for (var item of this.data.items) {
-                if (item.amount && item.currencyRate && this.data.policyType == "Kargo") {
+                 if (item.amount && item.currencyRate && this.data.policyType == "Kargo") {
                     item.amountIDR = item.amount * item.currencyRate;
                 }
 
-                if (item.amount2APercentage > 0 || item.amount2A > 0) {
-                    var dup = this.data.unitCharge.find(a => a.unitCode == "C2A");
-                    if (!dup)
-                        this.data.unitCharge.push({ unitCode: "C2A" });
-                }
-                if (item.amount2BPercentage > 0 || item.amount2B > 0) {
-                    var dup = this.data.unitCharge.find(a => a.unitCode == "C2B");
-                    if (!dup)
-                        this.data.unitCharge.push({ unitCode: "C2B" });
-                }
-                if (item.amount2CPercentage > 0 || item.amount2C > 0) {
-                    var dup = this.data.unitCharge.find(a => a.unitCode == "C2C");
-                    if (!dup)
-                        this.data.unitCharge.push({ unitCode: "C2C" });
-                }
+                // if (item.amount2APercentage > 0 || item.amount2A > 0) {
+                //     var dup = this.data.unitCharge.find(a => a.unitCode == "C2A");
+                //     if (!dup)
+                //         this.data.unitCharge.push({ unitCode: "C2A" });
+                // }
+                // if (item.amount2BPercentage > 0 || item.amount2B > 0) {
+                //     var dup = this.data.unitCharge.find(a => a.unitCode == "C2B");
+                //     if (!dup)
+                //         this.data.unitCharge.push({ unitCode: "C2B" });
+                // }
+                // if (item.amount2CPercentage > 0 || item.amount2C > 0) {
+                //     var dup = this.data.unitCharge.find(a => a.unitCode == "C2C");
+                //     if (!dup)
+                //         this.data.unitCharge.push({ unitCode: "C2C" });
+                // }
                 if (item.amount1APercentage > 0 || item.amount1A > 0) {
-                    var dup = this.data.unitCharge.find(a => a.unitCode == "C1A");
+                    var dup = this.data.unitCharge.find(a => a.unitCode == "GMT");
                     if (!dup)
-                        this.data.unitCharge.push({ unitCode: "C1A" });
+                        this.data.unitCharge.push({ unitCode: "GMT" });
                 }
-                if (item.amount1BPercentage > 0 || item.amount1B > 0) {
-                    var dup = this.data.unitCharge.find(a => a.unitCode == "C1B");
-                    if (!dup)
-                        this.data.unitCharge.push({ unitCode: "C1B" });
-                }
+                // if (item.amount1BPercentage > 0 || item.amount1B > 0) {
+                //     var dup = this.data.unitCharge.find(a => a.unitCode == "C1B");
+                //     if (!dup)
+                //         this.data.unitCharge.push({ unitCode: "C1B" });
+                // }
                 if (this.data.policyType == "Piutang") {
                     item.rate = this.data.rate;
                 }
@@ -191,31 +191,31 @@ export class DataForm {
     itemChanged(e) {
         this.data.unitCharge = [];
         for (var item of this.data.items) {
-            if (item.amount2APercentage > 0 || item.amount2A > 0) {
-                var dup = this.data.unitCharge.find(a => a.unitCode == "C2A");
-                if (!dup)
-                    this.data.unitCharge.push({ unitCode: "C2A" });
-            }
-            if (item.amount2BPercentage > 0 || item.amount2B > 0) {
-                var dup = this.data.unitCharge.find(a => a.unitCode == "C2B");
-                if (!dup)
-                    this.data.unitCharge.push({ unitCode: "C2B" });
-            }
-            if (item.amount2CPercentage > 0 || item.amount2C > 0) {
-                var dup = this.data.unitCharge.find(a => a.unitCode == "C2C");
-                if (!dup)
-                    this.data.unitCharge.push({ unitCode: "C2C" });
-            }
+            // if (item.amount2APercentage > 0 || item.amount2A > 0) {
+            //     var dup = this.data.unitCharge.find(a => a.unitCode == "C2A");
+            //     if (!dup)
+            //         this.data.unitCharge.push({ unitCode: "C2A" });
+            // }
+            // if (item.amount2BPercentage > 0 || item.amount2B > 0) {
+            //     var dup = this.data.unitCharge.find(a => a.unitCode == "C2B");
+            //     if (!dup)
+            //         this.data.unitCharge.push({ unitCode: "C2B" });
+            // }
+            // if (item.amount2CPercentage > 0 || item.amount2C > 0) {
+            //     var dup = this.data.unitCharge.find(a => a.unitCode == "C2C");
+            //     if (!dup)
+            //         this.data.unitCharge.push({ unitCode: "C2C" });
+            // }
             if (item.amount1APercentage > 0 || item.amount1A > 0) {
-                var dup = this.data.unitCharge.find(a => a.unitCode == "C1A");
+                var dup = this.data.unitCharge.find(a => a.unitCode == "GMT");
                 if (!dup)
-                    this.data.unitCharge.push({ unitCode: "C1A" });
+                    this.data.unitCharge.push({ unitCode: "GMT" });
             }
-            if (item.amount1BPercentage > 0 || item.amount1B > 0) {
-                var dup = this.data.unitCharge.find(a => a.unitCode == "C1B");
-                if (!dup)
-                    this.data.unitCharge.push({ unitCode: "C1B" });
-            }
+            // if (item.amount1BPercentage > 0 || item.amount1B > 0) {
+            //     var dup = this.data.unitCharge.find(a => a.unitCode == "C1B");
+            //     if (!dup)
+            //         this.data.unitCharge.push({ unitCode: "C1B" });
+            // }
 
         }
     }
