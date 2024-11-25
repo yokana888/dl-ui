@@ -43,15 +43,15 @@
                     <td align="center" rowspan="2">Kurs USD</td>
                     <td align="center" rowspan="2">Amount</td>
                     <td align="center" rowspan="2">Premi</td>                            
-                    <td align="center" colspan="5">Amount / Konfeksi</td>
+                    <td align="center" rowspan="2">Amount</td>
                 </tr>
-                    <tr>
+                    <!--<tr>
                         <td align="center">C 1 A</td>
                         <td align="center">C 1 B</td>
                         <td align="center">C 2 A</td>         
                         <td align="center">C 2 B</td>         
                         <td align="center">C 2 C</td>                                                    
-                    </tr>
+                    </tr>-->
             </thead>
             <tbody>
                 <template repeat.for="buyer of buyers">
@@ -73,10 +73,10 @@
                         <td class="text-right"><strong>${data.amount}</strong></td>
                         <td class="text-right"><strong>${data.premiAmount}</strong></td>
                         <td class="text-right"><strong>${data.amountC1A}</strong></td>
-                        <td class="text-right"><strong>${data.amountC1B}</strong></td>
+                        <!--<td class="text-right"><strong>${data.amountC1B}</strong></td>
                         <td class="text-right"><strong>${data.amountC2A}</strong></td>
                         <td class="text-right"><strong>${data.amountC2B}</strong></td>
-                        <td class="text-right"><strong>${data.amountC2C}</strong></td>
+                        <td class="text-right"><strong>${data.amountC2C}</strong></td>-->
                     </tr>
                     <tr class="active">
                         <td class="text-center">.</td>
@@ -91,10 +91,10 @@
                         <td class="text-right"><strong>${buyer.subTotal}</strong></td>
                         <td class="text-right"><strong>${buyer.subTotal1}</strong></td>
                         <td class="text-right"><strong>${buyer.subTotal2}</strong></td>                        
-                        <td class="text-right"><strong>${buyer.subTotal3}</strong></td>
+                        <!--<td class="text-right"><strong>${buyer.subTotal3}</strong></td>
                         <td class="text-right"><strong>${buyer.subTotal4}</strong></td>
                         <td class="text-right"><strong>${buyer.subTotal5}</strong></td>
-                        <td class="text-right"><strong>${buyer.subTotal6}</strong></td>
+                        <td class="text-right"><strong>${buyer.subTotal6}</strong></td>-->
                     </tr>
                 </template>
                     <tr class="active">
@@ -108,10 +108,10 @@
                         <td class="text-right"><strong>${TotAmt}</strong></td>
                         <td class="text-right"><strong>${TotPrm}</strong></td>
                         <td class="text-right"><strong>${Tot1A}</strong></td>
-                        <td class="text-right"><strong>${Tot1B}</strong></td>                        
+                        <!--<td class="text-right"><strong>${Tot1B}</strong></td>                        
                         <td class="text-right"><strong>${Tot2A}</strong></td>
                         <td class="text-right"><strong>${Tot2B}</strong></td>
-                        <td class="text-right"><strong>${Tot2C}</strong></td>   
+                        <td class="text-right"><strong>${Tot2C}</strong></td>   -->
                     </tr>
             </tbody>
         </table>

@@ -38,7 +38,7 @@
             <au-numeric value.bind="premi" read-only.bind="true" if.bind="type!='Kargo'">
             </au-numeric>
         </td>
-        <td>
+        <!--<td>
             <au-numeric value.bind="amount2A" read-only.bind="true">
             </au-numeric>
         </td>
@@ -49,15 +49,15 @@
         <td>
             <au-numeric value.bind="amount2C" read-only.bind="true">
             </au-numeric>
-        </td>
+        </td>-->
         <td>
             <au-numeric value.bind="amount1A" read-only.bind="true">
             </au-numeric>
         </td>
-        <td>
+        <!--<td>
             <au-numeric value.bind="amount1B" read-only.bind="true">
             </au-numeric>
-        </td>
+        </td>-->
         <td if.bind="!readOnly">
             <button class="btn btn-danger pull-right" click.delegate="onremove(data, $event)">-</button>
         </td>
