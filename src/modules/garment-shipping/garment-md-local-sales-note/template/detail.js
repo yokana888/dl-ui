@@ -78,6 +78,8 @@ export class Detail {
                 unit: "PCS",
               };
               a.bonFrom = "PRODUKSI";
+              a.comodity = a.Comodity;
+              a.roNO = a.RONo;
               noList.push(a);
             }
           }
@@ -103,6 +105,8 @@ export class Detail {
                 unit: "PCS",
               };
               a.bonFrom = "SAMPLE";
+              a.comodity = a.Comodity;
+              a.roNO = a.RONo;
               noList.push(a);
             }
           }
@@ -129,6 +133,25 @@ export class Detail {
                   unit: "PCS",
                 };
                 a.bonFrom = "SISA";
+                // a.comodity = a.Comodity;
+                // a.roNO = a.RONo;
+
+                //mapping item to detailItems
+                a.detailItems = [];
+
+                a.Items.forEach((item) => {
+                  var detail = {
+                    quantity: item.ExpenditureQuantity,
+                    uom: {
+                      id: 43,
+                      unit: "PCS",
+                    },
+                    comodity: item.LeftoverComodity,
+                    roNO: item.RONo,
+                  };
+
+                  a.detailItems.push(detail);
+                });
                 noList.push(a);
               }
             }
@@ -152,11 +175,17 @@ export class Detail {
       this.data.quantity = newValue.quantity;
       this.data.uom = newValue.uom;
       this.data.bonFrom = newValue.bonFrom;
+      this.data.comodity = newValue.comodity;
+      this.data.roNO = newValue.roNO;
+      this.data.detailItems = newValue.detailItems;
     } else {
       this.data.bonNo = null;
       this.data.quantity = 0;
       this.data.uom = null;
       this.data.bonFrom = null;
+      this.data.comodity = null;
+      this.data.roNO = null;
+      this.data.detailItems = [];
     }
   }
 }
