@@ -9,6 +9,8 @@ export class List {
     this.service = service;
     this.router = router;
     this.today = new Date();
+    this.UnitItem="GARMENT";
+    this.unit="GMT";
   }
 
   info = { page: 1, size: 50 };
@@ -26,14 +28,14 @@ export class List {
   @bindable KtgrItem;
 
   KategoriItems = ["", "BAHAN BAKU", "BAHAN EMBALANCE", "BAHAN PENDUKUNG"];
-  UnitItems = [
-    "",
-    "KONFEKSI 2A",
-    "KONFEKSI 2B",
-    "KONFEKSI 2C",
-    "KONFEKSI 1A",
-    "KONFEKSI 1B",
-  ];
+  // UnitItems = [
+  //   "",
+  //   "KONFEKSI 2A",
+  //   "KONFEKSI 2B",
+  //   "KONFEKSI 2C",
+  //   "KONFEKSI 1A",
+  //   "KONFEKSI 1B",
+  // ];
 
   search() {
     this.info.page = 1;
@@ -43,6 +45,7 @@ export class List {
   activate() {}
   tableData = [];
   searching() {
+    this.unit="GMT";
     var args = {
       page: this.info.page,
       size: this.info.size,
@@ -148,33 +151,33 @@ export class List {
     }
   }
 
-  UnitItemChanged(newvalue) {
-    if (newvalue) {
-      console.log(newvalue);
-      if (newvalue === "KONFEKSI 2A") {
-        this.unit = "C2A";
-        this.unitname = "KONFEKSI 2A";
-      } else if (newvalue === "KONFEKSI 2B") {
-        this.unit = "C2B";
-        this.unitname = "KONFEKSI 2B";
-      } else if (newvalue === "KONFEKSI 2C") {
-        this.unit = "C2C";
-        this.unitname = "KONFEKSI 2C";
-      } else if (newvalue === "KONFEKSI 1A") {
-        this.unit = "C1A";
-        this.unitname = "KONFEKSI 1A";
-      } else if (newvalue === "KONFEKSI 1B") {
-        this.unit = "C1B";
-        this.unitname = "KONFEKSI 1B";
-      } else {
-        this.unit = "";
-        this.unitname = "";
-      }
-    } else {
-      this.unit = "";
-      this.unitname = "";
-    }
-  }
+  // UnitItemChanged(newvalue) {
+  //   if (newvalue) {
+  //     console.log(newvalue);
+  //     if (newvalue === "KONFEKSI 2A") {
+  //       this.unit = "C2A";
+  //       this.unitname = "KONFEKSI 2A";
+  //     } else if (newvalue === "KONFEKSI 2B") {
+  //       this.unit = "C2B";
+  //       this.unitname = "KONFEKSI 2B";
+  //     } else if (newvalue === "KONFEKSI 2C") {
+  //       this.unit = "C2C";
+  //       this.unitname = "KONFEKSI 2C";
+  //     } else if (newvalue === "KONFEKSI 1A") {
+  //       this.unit = "C1A";
+  //       this.unitname = "KONFEKSI 1A";
+  //     } else if (newvalue === "KONFEKSI 1B") {
+  //       this.unit = "C1B";
+  //       this.unitname = "KONFEKSI 1B";
+  //     } else {
+  //       this.unit = "";
+  //       this.unitname = "";
+  //     }
+  //   } else {
+  //     this.unit = "";
+  //     this.unitname = "";
+  //   }
+  // }
 
   KtgrItemChanged(newvalue) {
     if (newvalue) {
