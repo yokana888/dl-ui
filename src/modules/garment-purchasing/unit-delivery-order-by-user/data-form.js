@@ -33,7 +33,8 @@ export class DataForm {
     @bindable isTransferSubcon = false;
     @bindable RONoJob;
 
-    typeUnitDeliveryOrderOptions = ['PROSES', 'TRANSFER', 'SISA', 'SUBCON', 'TRANSFER SUBCON', 'TRANSFER SAMPLE'];//, 'SAMPLE'
+    // typeUnitDeliveryOrderOptions = ['PROSES', 'TRANSFER', 'SISA', 'SUBCON', 'TRANSFER SUBCON', 'TRANSFER SAMPLE'];//, 'SAMPLE'
+    typeUnitDeliveryOrderOptions = ['PROSES', 'SISA', 'SUBCON', 'TRANSFER SAMPLE'];//, 'SAMPLE'
 
     controlOptions = {
         label: {
