@@ -9,18 +9,12 @@
     <h1 class="page-header">Monitoring Flow Persediaan</h1>
 
     <form class="form-horizontal">
-      <!-- <au-autocomplete 
-            value.bind="unit" 
-            label="Unit" 
-            loader.bind="unitLoader"
-            placeholder="Cari Nama Unit" 
-            read-only.bind="false" 
-            text.bind="unitView"
-            options.bind="controlOptions">
-      </au-autocomplete> -->
+    
+      <!-- <au-dropdown label="Unit" value.bind="UnitItem" items.bind="UnitItems" options.bind="controlOptions" >
+      </au-dropdown> -->
 
-      <au-dropdown label="Unit" value.bind="UnitItem" items.bind="UnitItems" options.bind="controlOptions">
-      </au-dropdown>
+      <au-textbox label="Unit" value.bind="UnitItem" options.bind="controlOptions" read-only.bind="true">
+      </au-textbox>
 
       <au-datepicker label="Tanggal Awal" value.bind="dateFrom" error.bind="error.dateFrom"
         options.bind="controlOptions"></au-datepicker>
