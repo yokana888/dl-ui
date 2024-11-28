@@ -2,7 +2,8 @@ import { inject, Lazy } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
 import { RestService } from '../../../../utils/rest-service';
 
-const serviceUri = 'account-stock-report';
+const serviceUri = 'account-stock-report/gmt';
+const UnitServiceUri = 'master/garment-sample-units';
 
 export class Service extends RestService {
 
@@ -21,5 +22,15 @@ export class Service extends RestService {
         var endpoint = `${serviceUri}/download?unitcode=${args.unitcode}&unitname=${args.unitname}&category=${args.category}&categoryname=${args.categoryname}&dateFrom=${args.dateFrom}&dateTo=${args.dateTo}`;
         return super.getXls(endpoint);
     }
+}
 
+export class CoreService extends RestService {
+    constructor(http, aggregator, config, endpoint) {
+        super(http, aggregator, config, "core");
+    }
+
+    getUnit(info) {
+        var endpoint = `${UnitServiceUri}`;
+        return super.list(endpoint, info);
+    }
 }

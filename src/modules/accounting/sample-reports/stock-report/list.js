@@ -59,60 +59,31 @@ export class List {
             category : this.category ? this.category : "",
             //suppliertype : this.Tipe
         };
-        console.log(args)
         this.service.search(args)
             .then(result=>{
                 this.data=[];
                 
                 for(var _data of result.data){
                     
-                    if(args.unitcode == "C2A"){
-                        _data.ReceiptPurchaseQty = _data.ReceiptPurchaseQty + _data.ReceiptKon2AQty,
-                        _data.ReceiptPurchasePrice = _data.ReceiptPurchasePrice + _data.ReceiptKon2APrice
-                    }else if (args.unitcode == "C2B"){
-                        _data.ReceiptPurchaseQty = _data.ReceiptPurchaseQty + _data.ReceiptKon2BQty,
-                        _data.ReceiptPurchasePrice = _data.ReceiptPurchasePrice + _data.ReceiptKon2BPrice
-                    }else if (args.unitcode == "C2C"){
-                        _data.ReceiptPurchaseQty = _data.ReceiptPurchaseQty + _data.ReceiptKon2CQty,
-                        _data.ReceiptPurchasePrice = _data.ReceiptPurchasePrice + _data.ReceiptKon2CPrice
-                    }else if (args.unitcode == "C1A"){
-                        _data.ReceiptPurchaseQty = _data.ReceiptPurchaseQty + _data.ReceiptKon1AQty,
-                        _data.ReceiptPurchasePrice = _data.ReceiptPurchasePrice + _data.ReceiptKon1APrice
-                    }else{
-                        _data.ReceiptPurchaseQty = _data.ReceiptPurchaseQty + _data.ReceiptKon1BQty,
-                        _data.ReceiptPurchasePrice = _data.ReceiptPurchasePrice + _data.ReceiptKon1BPrice
-                    }
-                
+                    _data.ReceiptPurchaseQty = _data.ReceiptPurchaseQty 
                     _data.ReceiptPurchasePrice = _data.ReceiptPurchasePrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     _data.BeginningBalancePrice = _data.BeginningBalancePrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     _data.EndingBalancePrice = _data.EndingBalancePrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ExpendKon1APrice = _data.ExpendKon1APrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ExpendKon2APrice = _data.ExpendKon2APrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ExpendKon2BPrice = _data.ExpendKon2BPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ExpendKon2CPrice = _data.ExpendKon2CPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ExpendKon1BPrice = _data.ExpendKon1BPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     _data.ExpendProcessPrice = _data.ExpendProcessPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     _data.ExpendRestPrice = _data.ExpendRestPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     _data.ExpendReturPrice = _data.ExpendReturPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     _data.ExpendSamplePrice = _data.ExpendSamplePrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     _data.ReceiptCorrectionPrice = _data.ReceiptCorrectionPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ReceiptKon1APrice = _data.ReceiptKon1APrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ReceiptKon2APrice = _data.ReceiptKon2APrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ReceiptKon2BPrice = _data.ReceiptKon2BPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ReceiptKon2CPrice = _data.ReceiptKon2CPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    _data.ReceiptKon1BPrice = _data.ReceiptKon1BPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     _data.ReceiptProcessPrice = _data.ReceiptProcessPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    // _data.ExpendSubconPrice = _data.ExpendSubconPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-                    // _data.ExpendOtherPrice = _data.ExpendOtherPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                    //_data.ExpendOtherQuantity = _data.ExpendOtherQuantity.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                    _data.ExpendOtherPrice = _data.ExpendOtherPrice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                     this.data.push(_data);
-
                 }
-                console.log(this.data)
-                this.info.total=result.info.total
-            })
 
-            
-            
+                this.info.total=result.info.total
+
+                console.log(result.data);
+            })
     }
 
     reset() {
@@ -120,7 +91,6 @@ export class List {
         this.dateTo="",
         this.KtgrItem="",
         this.UnitItem=""
-        
     }
 
     ExportToExcel() {
@@ -198,6 +168,7 @@ export class List {
             this.unitname = "";
         }
     }
+
     changePage(e) {
         var page = e.detail;
         this.info.page = page;

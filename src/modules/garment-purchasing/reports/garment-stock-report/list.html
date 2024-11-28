@@ -4,18 +4,15 @@
     <h1 if.bind ="KtgrItem == 'BAHAN EMBALANCE'" class="page-header">LAPORAN STOCK BAHAN EMBALANCE</h1>
     <h1 if.bind ="KtgrItem == 'BAHAN PENDUKUNG'" class="page-header">LAPORAN STOCK BAHAN PENDUKUNG</h1>
     <form class="form-horizontal">
-        <au-dropdown 
-              label="Unit" 
-              value.bind="UnitItem"
-              items.bind="UnitItems"
-              options.bind="controlOptions" >
-      </au-dropdown>
+        <au-autocomplete label="Unit" value.bind="selectedUnit"  read-only.bind="true"
+            options.bind="controlOptions" loader.bind="unitLoader" text.bind="unitView" placeholder="Unit">
+        </au-autocomplete>
         <au-dropdown 
               label="Kategori" 
               value.bind="KtgrItem"
               items.bind="KategoriItems"
               options.bind="controlOptions" >
-      </au-dropdown>
+        </au-dropdown>
         <au-datepicker label="Tanggal Awal" value.bind="dateFrom" options.bind="controlOptions"></au-datepicker>
         <au-datepicker label="Tanggal Akhir" value.bind="dateTo" options.bind="controlOptions"></au-datepicker>
         <div class="form-group">
@@ -29,7 +26,6 @@
             <button class='btn btn-primary' click.delegate="ExportToExcel()">Export To Excel</button>
           </div>
         <br>
-    
         <div class="table-responsive">
             <table class="table table-bordered table-hover" border="1" id="poReport">
                 <thead align="center">
@@ -39,7 +35,6 @@
                         <td align="center" rowspan="2">No R/O</td>
                         <td align="center" rowspan="2">PLAN PO</td>
                         <td align="center" rowspan="2">ARTIKEL</td>
-                        <!-- <td align="center" rowspan="2">NAMA BARANG</td> -->
                         <td align="center" rowspan="2">KETERANGAN BARANG</td>
                         <td align="center" rowspan="2">BUYER</td>
                         <td align="center" colspan="2">SALDO AWAL</td>
@@ -48,7 +43,6 @@
                         <td align="center" colspan="2">SALDO AKHIR</td>
                         <!-- <td align="center" rowspan="2">ASAL</td> -->
                     </tr>
-
                     <tr>
                         <td align="center">JUMLAH</td>
                         <td align="center">SATUAN</td>
@@ -59,7 +53,6 @@
                         <td align="center">SATUAN</td>
                         <td align="center">JUMLAH</td>
                         <td align="center">SATUAN</td>
-                        
                     </tr>
                 </thead>
                 <tbody>
@@ -69,7 +62,6 @@
                         <td>${item.RO}</td>
                         <td>${item.PlanPo}</td>
                         <td>${item.NoArticle}</td>
-                        <!-- <td>${item.ProductName}</td> -->
                         <td>${item.ProductRemark}</td>
                         <td>${item.Buyer}</td>
                         <td>${item.BeginningBalanceQty}</td>
