@@ -9,6 +9,8 @@ export class List {
     constructor(router, service) {
         this.service = service;
         this.router = router;
+        this.UnitItem="GARMENT";
+        this.unit=123;
 
     }
     bind(context) {
@@ -26,7 +28,7 @@ export class List {
 
     @bindable UnitItem;
 
-    UnitItems = ['', 'KONFEKSI 2A', 'KONFEKSI 2B', 'KONFEKSI 2C', 'KONFEKSI 1A', 'KONFEKSI 1B']
+    //UnitItems = ['', 'KONFEKSI 2A', 'KONFEKSI 2B', 'KONFEKSI 2C', 'KONFEKSI 1A', 'KONFEKSI 1B']
 
     searching() {
         var info = {
