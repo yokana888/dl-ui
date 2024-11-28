@@ -10,14 +10,24 @@ export class List {
         this.service = service;
         this.router = router;
 
+        this.UnitItem="GARMENT";
+        this.unit=123;
     }
     bind(context) {
         this.context = context;
     }
+    controlOptions = {
+        label: {
+            length: 4
+        },
+        control: {
+            length: 4
+        }
+    };
     
     @bindable UnitItem;
 
-    UnitItems = ['','KONFEKSI 2A','KONFEKSI 2B','KONFEKSI 2C','KONFEKSI 1A','KONFEKSI 1B']
+    //UnitItems = ['','KONFEKSI 2A','KONFEKSI 2B','KONFEKSI 2C','KONFEKSI 1A','KONFEKSI 1B']
 
     searching() {
         var info = {

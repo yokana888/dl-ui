@@ -10,25 +10,16 @@
   
       <form class="form-horizontal">
 
-        <au-dropdown 
+        <!-- <au-dropdown 
         label="Unit" 
         value.bind="UnitItem"
         items.bind="UnitItems"
         options.bind="controlOptions" >
-        </au-dropdown>
-
-        <!-- <au-autocomplete 
-            value.bind="unit" 
-            label="Unit" 
-            loader.bind="unitLoader"
-            placeholder="Cari Nama Unit" 
-            read-only.bind="readOnly" 
-            text.bind="unitView"
-            options.bind="controlOptions">
-        </au-autocomplete> -->
-  
-        <au-datepicker label="Tanggal Awal" value.bind="dateFrom"></au-datepicker>
-        <au-datepicker label="Tanggal Akhir" value.bind="dateTo"></au-datepicker>
+        </au-dropdown> -->
+        <au-textbox label="Unit" value.bind="UnitItem" options.bind="controlOptions" read-only.bind="true">
+        </au-textbox>
+        <au-datepicker label="Tanggal Awal" value.bind="dateFrom" options.bind="controlOptions"></au-datepicker>
+        <au-datepicker label="Tanggal Akhir" value.bind="dateTo" options.bind="controlOptions"></au-datepicker>
   
         <div class="form-group">
             <label for="contact" class="col-sm-6 control-label"></label>
