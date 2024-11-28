@@ -22,6 +22,7 @@ export class List {
             }
         },
         { field: 'PaymentDispositionNo', title: 'No Bukti Pembayaran Disposisi' },
+        { field: 'BankCashNo', title: 'No Kasbon' },
         {
             field: 'PaymentDate',
             title: 'Tanggal Pembayaran',

@@ -11,7 +11,13 @@ export class PurchaseOrderItem {
     this.error = context.error;
     this.options = context.options;
     this.useVat = this.context.context.options.useVat || false;
+    console.log(this.data.IsPayVAT);
+    // console.log(this.data.UseVat);
+
     console.log(this.data);
+    
+    this.data.UseVat = this.data.isPayVat;
+
 
     // if(!this.data.useVat){
     //   this.data.includePpn=false;

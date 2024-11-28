@@ -18,6 +18,7 @@ export class List {
         }
     },
     { field: "DocumentNo", title: "No. Bukti Pengeluaran Bank" },
+    { field: "BankCashNo", title: "No. Kasbon" },
     {
         field: "Date",
         title: "Tanggal",
