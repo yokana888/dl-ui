@@ -1,9 +1,9 @@
 import { inject, bindable } from 'aurelia-framework';
-import { Service,CoreService } from "./service";
+import { Service, CoreService } from "./service";
 import { Router } from 'aurelia-router';
 var moment = require('moment');
 
-@inject(Router, Service,CoreService)
+@inject(Router, Service, CoreService)
 export class List {
     
     @bindable selectedUnit;
@@ -20,14 +20,14 @@ export class List {
         return `${unit.Code} - ${unit.Name}`
     }
 
-    constructor(router, service,coreService) {
+    constructor(router, service, coreService) {
         this.service = service;
         this.router = router;
         this.today = new Date();
         this.coreService=coreService;
     }
 
-    info = { page: 1,size:50};
+    info = { page: 1, size: 50 };
 
     controlOptions = {
         label: {
