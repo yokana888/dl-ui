@@ -2,7 +2,7 @@ import { inject, Lazy } from 'aurelia-framework';
 import { HttpClient } from 'aurelia-fetch-client';
 import { RestService } from '../../../../utils/rest-service';
 
-const serviceUri = 'account-stock-report';
+const serviceUri = 'account-stock-report/gmt';
 
 export class Service extends RestService {
 

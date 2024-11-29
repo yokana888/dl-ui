@@ -45,55 +45,23 @@
                         <td align="center" rowspan="3">NAMA BARANG</td>
                         <td align="center" rowspan="3">BUYER</td>
                         <td align="center" colspan="3" rowspan="2">SALDO AWAL</td>
-                        <td align="center" colspan="16">P E M A S U K A N</td>
-                        <td colspan="20">P E N G E L U A R A N</td>
+                        <td align="center" colspan="6">P E M A S U K A N</td>
+                        <td colspan="10">P E N G E L U A R A N</td>
                         <td align="center" rowspan="2" colspan="2">SALDO AKHIR</td>
                      </tr>
                     <tr>
                         <td colspan="2">KOREKSI</td>
                         <td colspan="2">PEMBELIAN</td>
                         <td colspan="2">PROSES</td>
-                        <td colspan="2" if.bind ="UnitItem != 'KONFEKSI 2A'">KONFEKSI 2A</td>
-                        <td colspan="2" if.bind ="UnitItem != 'KONFEKSI 2B'">KONFEKSI 2B</td>
-                        <td colspan="2" if.bind ="UnitItem != 'KONFEKSI 2C'">KONFEKSI 2C/EX. K4</td>
-                        <td colspan="2" if.bind ="UnitItem != 'KONFEKSI 1A'">KONFEKSI 1A/EX. K3</td>
-                        <td colspan="2" if.bind ="UnitItem != 'KONFEKSI 1B'">KONFEKSI 1B</td>
                         <td colspan="2">RETUR</td>
                         <td colspan="2">SISA</td>
                         <td colspan="2">SAMPLE</td>
                         <td colspan="2">SUBCON</td>
                         <td colspan="2">LAIN-LAIN</td>
-                        <td colspan="2" >KONFEKSI 2A</td>
-                        <td colspan="2" >KONFEKSI 2B</td>
-                        <td colspan="2" >KONFEKSI 2C/EX. K4</td>
-                        <td colspan="2" >KONFEKSI 1A/EX. K3</td>
-                        <td colspan="2" >KONFEKSI 1B</td>
                     </tr>
                     <tr>
                         <td>JUMLAH</td>
                         <td>SATUAN</td>
-                        <td>HARGA</td>
-                        <td if.bind ="UnitItem == ''">JUMLAH</td>
-                        <td if.bind ="UnitItem == ''">HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
-                        <td>HARGA</td>
-                        <td>JUMLAH</td>
                         <td>HARGA</td>
                         <td>JUMLAH</td>
                         <td>HARGA</td>
@@ -133,16 +101,6 @@
                         <td>${item.ReceiptPurchasePrice}</td>
                         <td>${item.ReceiptProcessQty}</td>
                         <td>${item.ReceiptProcessPrice}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 2A'">${item.ReceiptKon2AQty}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 2A'">${item.ReceiptKon2APrice}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 2B'">${item.ReceiptKon2BQty}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 2B'">${item.ReceiptKon2BPrice}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 2C'">${item.ReceiptKon2CQty}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 2C'">${item.ReceiptKon2CPrice}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 1A'">${item.ReceiptKon1AQty}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 1A'">${item.ReceiptKon1APrice}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 1B'">${item.ReceiptKon1BQty}</td>
-                        <td if.bind ="UnitItem != 'KONFEKSI 1B'">${item.ReceiptKon1BPrice}</td>
                         <td>${item.ExpendReturQty}</td>
                         <td>${item.ExpendReturPrice}</td>
                         <td>${item.ExpendRestQty}</td>
@@ -153,20 +111,9 @@
                         <td>${item.ExpendSubconPrice}</td>
                         <td>${item.ExpendOtherQty}</td>
                         <td>${item.ExpendOtherPrice}</td>
-                        <td>${item.ExpendKon2AQty}</td>
-                        <td>${item.ExpendKon2APrice}</td>
-                        <td>${item.ExpendKon2BQty}</td>
-                        <td>${item.ExpendKon2BPrice}</td>
-                        <td align="right">${item.ExpendKon2CQty}</td>
-                        <td>${item.ExpendKon2CPrice}</td>
-                        <td align="right">${item.ExpendKon1AQty}</td>
-                        <td align="right">${item.ExpendKon1APrice}</td>
-                        <td align="right">${item.ExpendKon1BQty}</td>
-                        <td align="right">${item.ExpendKon1BPrice}</td>
                         <td align="right">${item.EndingBalanceQty}</td>
                         <td align="right">${item.EndingBalancePrice}</td>
                     </tr>
-                    
                 </tbody>
             </table>
         </div>
@@ -175,7 +122,5 @@
         </div>
         <pagination if.bind="info.total>info.size"  info.bind="info" change.delegate="changePage($event)"></pagination>
         <hr/>
-   
     </form>
-    
 </template>

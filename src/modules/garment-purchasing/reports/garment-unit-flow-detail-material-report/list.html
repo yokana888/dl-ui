@@ -2,36 +2,48 @@
     <h1 class="page-header">Laporan Flow Pengeluaran</h1>
     <form class="form-horizontal">
         <au-dropdown 
-              label="Kategori" 
-              value.bind="KtgrItem"
-              items.bind="KategoriItem"
-              options.bind="controlOptions" >
+            label="Kategori" 
+            value.bind="KtgrItem"
+            items.bind="KategoriItem"
+            options.bind="controlOptions" >
         </au-dropdown>
                 
-        <au-dropdown label="Unit" value.bind="unitselect" items.bind="unitOption"></au-dropdown>
-       
-        
+        <au-autocomplete 
+            label="Unit" 
+            value.bind="selectedUnit"  
+            read-only.bind="true"
+            options.bind="controlOptions" 
+            loader.bind="unitLoader" 
+            text.bind="unitView" 
+            placeholder="Unit">
+        </au-autocomplete>
         
         <au-datepicker 
-                    label="Tanggal Transaksi Awal" 
-                    value.bind="dateFrom">
-                </au-datepicker>
+            label="Tanggal Transaksi Awal" 
+            value.bind="dateFrom"
+            options.bind="controlOptions">
+        </au-datepicker>
+
         <au-datepicker 
-                label="Tanggal Transaksi Akhir" 
-                value.bind="dateTo">
-            </au-datepicker>
+            label="Tanggal Transaksi Akhir" 
+            value.bind="dateTo"
+            options.bind="controlOptions">
+        </au-datepicker>
 
         <au-datepicker 
             label="Tanggal Input Awal" 
-            value.bind="dateFromCreate">
+            value.bind="dateFromCreate"
+            options.bind="controlOptions">
         </au-datepicker>
+
         <au-datepicker 
             label="Tanggal input Akhir" 
-            value.bind="dateToCreate">
+            value.bind="dateToCreate"
+            options.bind="controlOptions">
         </au-datepicker>
         
         <div class="form-group">
-            <label for="contact" class="col-sm-6 control-label"></label>
+            <label for="contact" class="col-sm-5 control-label"></label>
             <div class="col-sm-3">
                 <button click.delegate="search()" class='btn btn-success'>Cari</button>
                 <button click.delegate="reset()" class='btn btn-success'>Reset</button>
