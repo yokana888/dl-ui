@@ -33,6 +33,11 @@ jobs:
       run: |
         npm install
         npm run build
+        
+    - name: Set Git Identity
+      run: |
+        git config --global user.email "it.software@danliris.com"
+        git config --global user.name "danliris"
 
       # Step 5: Track large files with Git LFS
     - name: Track large files with Git LFS
