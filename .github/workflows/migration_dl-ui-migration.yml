@@ -22,12 +22,12 @@ jobs:
       with:
         node-version: '18.16.0'
 
-      # Step 3: Install Git LFS
+       # Step 3: Install Git LFS
       - name: Install Git LFS
         run: |
-          sudo apt-get update
-          sudo apt-get install git-lfs
+          choco install git-lfs -y
           git lfs install
+          git lfs version
     
     - name: npm install, build, and test
       run: |
