@@ -22,12 +22,12 @@ jobs:
       with:
         node-version: '18.16.0'
 
-       # Step 3: Install Git LFS
-      - name: Install Git LFS
-        run: |
-          choco install git-lfs -y
-          git lfs install
-          git lfs version
+   # Step 3: Install Git LFS
+    - name: Install Git LFS
+      run: |
+        sudo apt-get update
+        sudo apt-get install git-lfs
+        git lfs install
     
     - name: npm install, build, and test
       run: |
@@ -35,11 +35,11 @@ jobs:
         npm run build
 
       # Step 5: Track large files with Git LFS
-      - name: Track large files with Git LFS
-        run: |
-          git lfs track "*.js"
-          git add .gitattributes
-          git commit -m "Track large files with Git LFS"
+    - name: Track large files with Git LFS
+      run: |
+        git lfs track "*.js"
+        git add .gitattributes
+        git commit -m "Track large files with Git LFS"
         
     - name: Deploy to GitHub Pages
       # You may pin to the exact commit or the version.
