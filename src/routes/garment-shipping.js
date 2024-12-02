@@ -1472,4 +1472,19 @@ module.exports = [
       iconClass: "fa fa-dashboard",
     },
   },
+  {
+    route: "garment-shipping/traceable-out",
+    name: "garment-shipping/traceable-out",
+    moduleId: "modules/garment-shipping/traceable-out/index",
+    nav: true,
+    title: "Traceable Keluar Lokal",
+    auth: true,
+    settings: {
+      group: "g-shipping",
+      subGroup: "penjualan lokal",
+      // permission: { "C9": 1, "SG": 1 },
+      permission: { P92: 1 },
+      iconClass: "fa fa-dashboard",
+    },
+  },
 ];
