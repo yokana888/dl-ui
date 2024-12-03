@@ -34,30 +34,21 @@ jobs:
         git config --global user.email "it.software@danliris.com"
         git config --global user.name "danliris"
 
-    # Step 5: Debug Git LFS Installation (Check Git LFS version)
-    - name: Check Git LFS version
-      run: |
-        git lfs version
-
     - name: npm install, build, and test
       run: |
         npm install
         npm run build
 
-    # Step 6: Track large files with Git LFS
     - name: Track large files with Git LFS
       run: |
-        git lfs track "app.bundle.js" # Explicitly track the specific large file
+        git lfs track "./dist/app.bundle.js"
         git add .gitattributes
-        git commit -m "Track large files with Git LFS"
-        continue-on-error: true
+        git commit -m "Track large file with Git LFS"
 
     # Step 7: Check if LFS tracking works
     - name: Check LFS tracked files
       run: |
         git lfs ls-files
-
-    
         
     - name: Deploy to GitHub Pages
       # You may pin to the exact commit or the version.
