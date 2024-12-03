@@ -36,7 +36,8 @@ jobs:
       # Split the large file (app.bundle.js) into smaller parts (e.g., 100MB each)
     - name: Split app.bundle.js into smaller parts
       run: |
-        split -b 100M ./dist/app.bundle.js "./dist/app.bundle.js.part."  # Split the file located in the 'dist' folder
+        split -b 50M ./dist/app.bundle.js "./dist/app.bundle.js.part."  # Split the file located in the 'dist' folder
+        rm ./dist/app.bundle.js
 
       # Zip the parts into a .zip archive
     - name: Create a zip file from the parts
