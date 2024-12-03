@@ -39,6 +39,11 @@ jobs:
       run: |
         git lfs version
 
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run build
+
     # Step 6: Track large files with Git LFS
     - name: Track large files with Git LFS
       run: |
@@ -52,10 +57,7 @@ jobs:
       run: |
         git lfs ls-files
 
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build
+    
         
     - name: Deploy to GitHub Pages
       # You may pin to the exact commit or the version.
