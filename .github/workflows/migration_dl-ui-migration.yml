@@ -41,7 +41,7 @@ jobs:
 
     - name: Track large files with Git LFS
       run: |
-        git lfs track "./dist/app.bundle.js"
+        git lfs track "*.js"
         git add .gitattributes
         git commit -m "Track large file with Git LFS"
 
