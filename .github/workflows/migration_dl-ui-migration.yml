@@ -22,33 +22,31 @@ jobs:
       with:
         node-version: '18.16.0'
 
-   # Step 3: Install Git LFS
-    - name: Install Git LFS
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run build
+        
+ # Install required tools (zip and split)
+    - name: Install tools
       run: |
         sudo apt-get update
-        sudo apt-get install git-lfs
-        git lfs install
+        sudo apt-get install -y zip
+
+      # Split the large file (app.bundle.js) into smaller parts (e.g., 100MB each)
+    - name: Split app.bundle.js into smaller parts
+      run: |
+        split -b 100M ./dist/app.bundle.js "./dist/app.bundle.js.part."  # Split the file located in the 'dist' folder
+
+      # Zip the parts into a .zip archive
+    - name: Create a zip file from the parts
+      run: |
+        zip ./dist/app.bundle.js.zip ./dist/app.bundle.js.part.*  # Zip the parts into the 'dist' folder
     
     - name: Set Git Identity
       run: |
         git config --global user.email "it.software@danliris.com"
         git config --global user.name "danliris"
-
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build
-
-    - name: Track large files with Git LFS
-      run: |
-        git lfs track "*.js"
-        git add .gitattributes
-        git commit -m "Track large file with Git LFS"
-
-    # Step 7: Check if LFS tracking works
-    - name: Check LFS tracked files
-      run: |
-        git lfs ls-files
         
     - name: Deploy to GitHub Pages
       # You may pin to the exact commit or the version.
@@ -63,3 +61,9 @@ jobs:
         REPOSITORY_NAME: danliris/danliris.github.io
         # Depending on the repository permissions you may need to provide the action with a GitHub personal access token instead of the provided GitHub token in order to deploy. This should be stored as a secret.
         ACCESS_TOKEN: ${{ secrets.GithubPages }}
+        
+ # Step 6: Clean up the split parts and zip file after deployment (optional)
+    - name: Clean up
+      run: |
+        rm ./dist/app.bundle.js.part.*  # Remove the split parts
+        rm ./dist/app.bundle.js.zip  # Remove the zip file
