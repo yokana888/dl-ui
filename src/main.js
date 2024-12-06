@@ -55,7 +55,8 @@ export async function configure(aurelia) {
             var weaving = "https://com-danliris-service-weaving.azurewebsites.net/";
             var finance = "https://com-danliris-service-finance-accounting-v8.azurewebsites.net/v1/";
             var garmentProduction = "https://com-danliris-service-garment.azurewebsites.net/";
-            var packingInventory = "https://com-danliris-service-packing-inventory.azurewebsites.net/v1/";
+            //var packingInventory = "https://com-danliris-service-packing-inventory.azurewebsites.net/v1/";
+            var packingInventory = "https://com-danliris-service-packing-inventory-v8.azurewebsites.net/v1/";
             var dyeing = "https://dyeing-printing-etl-service.azurewebsites.net/api/";
             const garmentShipping = "https://garment-etl-service.azurewebsites.net/api/";
             var ItInven = "https://it-inventory-etl-service.azurewebsites.net/api/";
